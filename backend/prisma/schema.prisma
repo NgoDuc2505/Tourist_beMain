@@ -1,0 +1,19 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Booking {
+  nameF        String    @db.VarChar(50)
+  IDnum        Int       @id
+  phone        String    @db.VarChar(50)
+  location     String    @db.VarChar(50)
+  numOfDays    Int
+  dateOfB      DateTime  @db.DateTime(0)
+  dateOfDepart DateTime  @db.DateTime(0)
+  isDeleted    DateTime? @db.DateTime(0)
+}
